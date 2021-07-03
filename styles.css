@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  /* colors */
+  --bgColor: linear-gradient(45deg, teal, wheat);
+  --calculatorColor: rgba(255, 255, 255, 0.4);
+  --keyColor: rgba(0, 0, 0, 0.2);
+  --equalsKeyColor: rgba(219, 121, 0, 0.8);
+  --opKeyColor: rgba(214, 143, 10, 0.8);
+
+  /* font size */
+  --keyFontSize: 1.2rem;
+  --DisplayCurrentFontSize: ;
+  --DisplayPrevFontSize: ;
+
+  /* hover effects */
+  --keyHoverColor: rgba(0, 0, 0, 0.3);
+  --equalsHoverColor: rgba(219, 121, 0, 1);
+  --opHoverColor: rgba(214, 143, 10, 1);
+}
+
+body {
+  height: 100vh;
+  background: var(--bgColor);
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+  background-color: var(--calculatorColor);
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+}
+.top-display {
+  border-bottom: 1px solid var(--keyColor);
+  flex: 1;
+  font-size: var(--keyFontSize);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.main-display {
+  flex: 2;
+  font-size: calc(var(--keyFontSize) + 0.5em);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.key-container {
+  flex: 2;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.prev {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+.prev-message {
+  flex: 1;
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+.prev-display {
+  flex: 2;
+  display: grid;
+  place-items: center;
+}
+.key {
+  background-color: var(--keyColor);
+  cursor: pointer;
+  border: none;
+  font-size: var(--keyFontSize);
+}
+.key:hover {
+  background-color: var(--keyHoverColor);
+}
+.op {
+  background-color: var(--opKeyColor);
+  font-size: calc(var(--keyFontSize) + 0.3rem);
+}
+.op:hover {
+  background-color: var(--opHoverColor);
+}
+.equals {
+  background-color: var(--equalsKeyColor);
+}
+.equals:hover {
+  background-color: var(--equalsHoverColor);
+}
+.clear-btn {
+  grid-column: 3 / 5;
+  grid-row: 1/ 1.5;
+}
